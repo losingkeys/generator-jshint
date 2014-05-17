@@ -1,0 +1,29 @@
+{
+  "name": "generator-jshint",
+  "version": "0.0.0",
+  "description": "Yeoman generator used to generate a JSHint configuration file",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "losingkeys/generator-jshint",
+  "author": {
+    "name": "Josh Hoff",
+    "url": "https://github.com/losingkeys"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "jshint"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "yosay": "^0.1.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
