@@ -1,0 +1,21 @@
+* generator-jshint
+  A Yeoman generator for [[http://jshint.com/][JSHint]] configuration files. This will *only*
+  add/overwrite =.jshintrc= in the current directory (so you can run it on
+  existing projects to add/overwrite that file).
+** Usage
+   Install:
+#+BEGIN_SRC sh
+# install yeoman if you haven't already:
+npm install -g yo
+
+# install the generator:
+npm install -g generator-jshint
+#+END_SRC
+   Run:
+#+BEGIN_SRC sh
+yo jshint
+#+END_SRC
+   You'll be asked a series of questions that are all used to configure
+   [[http://jshint.com/][JSHint]]. You can find the [[http://jshint.com/docs/options/][full list of JSHint options]] on its site, and [[https://github.com/jshint/jshint/blob/master/examples/.jshintrc][an
+   example =.jshintrc= file]] on GitHub. Issues with this generator can be
+   reported [[https://github.com/losingkeys/generator-jshint/issues][on GitHub]].
