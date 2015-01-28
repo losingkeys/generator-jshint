@@ -8,7 +8,6 @@ var JshintGenerator = yeoman.generators.Base.extend({
 
   askFor: function () {
     var done = this.async();
-
     this.log(yosay('Welcome to the JSHint configuration generator!'));
 
     // {{{ prompts
@@ -164,10 +163,10 @@ var JshintGenerator = yeoman.generators.Base.extend({
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
+          if (input) input = input.trim();
 
           // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
+          if (input.length !== 0 && input !== false && isNaN(parseInt(input))) {
             return "Please enter either a number or false for no limit; default is false"
           }
 
@@ -180,10 +179,10 @@ var JshintGenerator = yeoman.generators.Base.extend({
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
+          if (input) input = input.trim();
 
           // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
+          if (input.length !== 0 && input !== false && isNaN(parseInt(input))) {
             return "Please enter either a number or false for no limit; default is false"
           }
 
@@ -196,10 +195,10 @@ var JshintGenerator = yeoman.generators.Base.extend({
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
+          if (input) input = input.trim();
 
           // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
+          if (input.length !== 0 && input !== false && isNaN(parseInt(input))) {
             return "Please enter either a number or false for no limit; default is false"
           }
 
@@ -212,10 +211,10 @@ var JshintGenerator = yeoman.generators.Base.extend({
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
+          if (input) input = input.trim();
 
           // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
+          if (input.length !== 0 && input !== false && isNaN(parseInt(input))) {
             return "Please enter either a number or false for no limit; default is false"
           }
 
@@ -228,10 +227,10 @@ var JshintGenerator = yeoman.generators.Base.extend({
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
+          if (input) input = input.trim();
 
           // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
+          if (input.length !== 0 && input !== false && isNaN(parseInt(input))) {
             return "Please enter either a number or false for no limit; default is false"
           }
 
