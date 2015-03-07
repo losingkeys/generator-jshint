@@ -19,3 +19,14 @@ yo jshint
    [[http://jshint.com/][JSHint]]. You can find the [[http://jshint.com/docs/options/][full list of JSHint options]] on its site, and [[https://github.com/jshint/jshint/blob/master/examples/.jshintrc][an
    example =.jshintrc= file]] on GitHub. Issues with this generator can be
    reported [[https://github.com/losingkeys/generator-jshint/issues][on GitHub]].
+** Development
+   See [[http://yeoman.io/authoring/][yeoman's documentation]] for info about developing generators. After
+   cloning this generator, have a look at the "Running the generator" section of
+   that page for info on how to run this to try your changes locally. The
+   command you'll need is =npm link=, but this might change in the future, so
+   have a look at the yeoman docs above if that doesn't work.
+
+   If you already have this generator installed globally (like [[https://github.com/losingkeys/dotfiles/blob/f4c4dd1d76f0063da769ab41dec4bf0df0c74d2f/install/packages#L76][I usually do]]),
+   you can double check that your local one is preferred by adding something
+   like =throw 'oh no';= to the top of it, then =yo jshint= should fail right
+   away if you've set it up correctly.
