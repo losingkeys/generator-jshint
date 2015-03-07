@@ -160,82 +160,77 @@ var JshintGenerator = yeoman.generators.Base.extend({
       },
       {
         name: 'maxparams',
-        message: 'Max number of formal params allowed per function (number or false for no limit; default is false)',
+        message: 'Max number of formal params allowed per function (positive number or false for no limit; default is false)',
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
-
-          // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
-            return "Please enter either a number or false for no limit; default is false"
+          if (input === false || // ok if they hit enter (the default is false)
+              input.trim() === 'false' || // ok if they typed 'false'
+              (!isNaN(parseInt(input)) && parseInt(input) > 0)) { // ok if they typed positive a number
+            return true;
           }
 
-          return true
+          return 'Please enter either a positive number or false for no limit; default is false';
         }
       },
       {
         name: 'maxdepth',
-        message: 'Max depth of nested blocks (within functions; number or false for no limit; default is false)',
+        message: 'Max depth of nested blocks (within functions; positive number or false for no limit; default is false)',
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
-
-          // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
-            return "Please enter either a number or false for no limit; default is false"
+          if (input === false || // ok if they hit enter (the default is false)
+              input.trim() === 'false' || // ok if they typed 'false'
+              (!isNaN(parseInt(input)) && parseInt(input) > 0)) { // ok if they typed positive a number
+            return true;
           }
 
-          return true
+          return 'Please enter either a positive number or false for no limit; default is false';
         }
       },
       {
         name: 'maxstatements',
-        message: 'Max number statements per function (number or false for no limit; default is false)',
+        message: 'Max number statements per function (positive number or false for no limit; default is false)',
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
-
-          // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
-            return "Please enter either a number or false for no limit; default is false"
+          if (input === false || // ok if they hit enter (the default is false)
+              input.trim() === 'false' || // ok if they typed 'false'
+              (!isNaN(parseInt(input)) && parseInt(input) > 0)) { // ok if they typed positive a number
+            return true;
           }
 
-          return true
+          return 'Please enter either a positive number or false for no limit; default is false';
         }
       },
       {
         name: 'maxcomplexity',
-        message: 'Max cyclomatic complexity per function (number or false for no limit; default is false)',
+        message: 'Max cyclomatic complexity per function (positive number or false for no limit; default is false)',
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
-
-          // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
-            return "Please enter either a number or false for no limit; default is false"
+          if (input === false || // ok if they hit enter (the default is false)
+              input.trim() === 'false' || // ok if they typed 'false'
+              (!isNaN(parseInt(input)) && parseInt(input) > 0)) { // ok if they typed positive a number
+            return true;
           }
 
-          return true
+          return 'Please enter either a positive number or false for no limit; default is false';
         }
       },
       {
         name: 'maxlen',
-        message: 'Max number of characters per line (number or false for no limit; default is false)',
+        message: 'Max number of characters per line (positive number or false for no limit; default is false)',
         type: 'input',
         default: false,
         validate: function(input) {
-          input = input.trim()
-
-          // assume 'false' if nothing is entered
-          if (input.length !== 0 && input !== 'false' && isNaN(parseInt(input))) {
-            return "Please enter either a number or false for no limit; default is false"
+          if (input === false || // ok if they hit enter (the default is false)
+              input.trim() === 'false' || // ok if they typed 'false'
+              (!isNaN(parseInt(input)) && parseInt(input) > 0)) { // ok if they typed positive a number
+            return true;
           }
 
-          return true
+          return 'Please enter either a positive number or false for no limit; default is false';
         }
       },
       {
