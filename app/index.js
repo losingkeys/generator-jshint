@@ -159,7 +159,7 @@ var JshintGenerator = yeoman.generators.Base.extend({
       },
       {
         name: 'maxparams',
-        message: 'Max number of formal params allowed per function (positive number or false for no limit; default is false)',
+        message: 'Max number of formal params allowed per function (positive number, or false for no limit)',
         type: 'input',
         default: false,
         validate: function(input) {
@@ -169,12 +169,12 @@ var JshintGenerator = yeoman.generators.Base.extend({
             return true;
           }
 
-          return 'Please enter either a positive number or false for no limit; default is false';
+          return 'Please enter either a positive number, or false for no limit';
         }
       },
       {
         name: 'maxdepth',
-        message: 'Max depth of nested blocks (within functions; positive number or false for no limit; default is false)',
+        message: 'Max depth of nested blocks (within functions; positive number, or false for no limit)',
         type: 'input',
         default: false,
         validate: function(input) {
@@ -184,12 +184,12 @@ var JshintGenerator = yeoman.generators.Base.extend({
             return true;
           }
 
-          return 'Please enter either a positive number or false for no limit; default is false';
+          return 'Please enter either a positive number, or false for no limit';
         }
       },
       {
         name: 'maxstatements',
-        message: 'Max number statements per function (positive number or false for no limit; default is false)',
+        message: 'Max number statements per function (positive number, or false for no limit)',
         type: 'input',
         default: false,
         validate: function(input) {
@@ -199,12 +199,12 @@ var JshintGenerator = yeoman.generators.Base.extend({
             return true;
           }
 
-          return 'Please enter either a positive number or false for no limit; default is false';
+          return 'Please enter either a positive number, or false for no limit';
         }
       },
       {
         name: 'maxcomplexity',
-        message: 'Max cyclomatic complexity per function (positive number or false for no limit; default is false)',
+        message: 'Max cyclomatic complexity per function (positive number, or false for no limit)',
         type: 'input',
         default: false,
         validate: function(input) {
@@ -214,12 +214,12 @@ var JshintGenerator = yeoman.generators.Base.extend({
             return true;
           }
 
-          return 'Please enter either a positive number or false for no limit; default is false';
+          return 'Please enter either a positive number, or false for no limit';
         }
       },
       {
         name: 'maxlen',
-        message: 'Max number of characters per line (positive number or false for no limit; default is false)',
+        message: 'Max number of characters per line (positive number, or false for no limit)',
         type: 'input',
         default: false,
         validate: function(input) {
@@ -229,7 +229,7 @@ var JshintGenerator = yeoman.generators.Base.extend({
             return true;
           }
 
-          return 'Please enter either a positive number or false for no limit; default is false';
+          return 'Please enter either a positive number, or false for no limit';
         }
       },
       {
