@@ -1,7 +1,8 @@
 * generator-jshint
   A Yeoman generator for [[http://jshint.com/][JSHint]] configuration files. This will *only*
-  add/overwrite =.jshintrc= in the current directory (so you can run it on
-  existing projects to add/overwrite that file).
+  add/overwrite =.jshintrc= in the current directory. You can run it on existing
+  projects to add/overwrite that file. If you cancel (usually =C-c= in your
+  shell), then no =.jshintrc= file will be created.
 ** Usage
    Install:
 #+BEGIN_SRC sh
