@@ -1,8 +1,6 @@
-/* jshint node:true */
 'use strict';
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-
 
 var JshintGenerator = yeoman.generators.Base.extend({
 
@@ -21,9 +19,9 @@ var JshintGenerator = yeoman.generators.Base.extend({
         default: 50,
         validate: function(input) {
           if (isNaN(parseInt(input)))
-            return '"maxerr" must be a number'
+            return '"maxerr" must be a number';
 
-          return true
+          return true;
         }
       },
       {
@@ -57,9 +55,9 @@ var JshintGenerator = yeoman.generators.Base.extend({
         default: 4,
         validate: function(input) {
           if (isNaN(parseInt(input)))
-            return '"indent" must be a number'
+            return '"indent" must be a number';
 
-          return true
+          return true;
         }
       },
       {
@@ -134,10 +132,11 @@ var JshintGenerator = yeoman.generators.Base.extend({
           }
        ],
         validate: function(input) {
-          if (isNaN(parseInt(input)))
-            return"'quotmark' must be a number"
+          if (isNaN(parseInt(input))) {
+            return '\'quotmark\' must be a number';
+          }
 
-          return true
+          return true;
         }
       },
       {
@@ -450,30 +449,30 @@ var JshintGenerator = yeoman.generators.Base.extend({
         default: '{}',
         validate: function(input) {
           try {
-            var globals = JSON.parse(input)
+            var globals = JSON.parse(input);
 
             for (var name in globals) {
               if (globals.hasOwnProperty(name)) {
                 if (typeof globals[name] !== 'boolean')
                   return 'Please enter a JSON object with only boolean ' +
-                    'values to indicate which globals are or are not allowed'
+                    'values to indicate which globals are or are not allowed';
               }
             }
           } catch(e) {
-            return 'Please enter a valid JSON object'
+            return 'Please enter a valid JSON object';
           }
 
-          return true
+          return true;
         }
       }
-    ]
+    ];
 
     // prompts }}}
 
     this.prompt(prompts, function (props) {
       for (var property in props) {
         if (props.hasOwnProperty(property)) {
-          this._setJshintOption(property, props[property])
+          this._setJshintOption(property, props[property]);
         }
       }
 
@@ -488,7 +487,7 @@ var JshintGenerator = yeoman.generators.Base.extend({
   // stores a JSHint option for later
   _setJshintOption: function (property, value) {
     if (typeof this.jshintOptions === 'undefined')
-      this.jshintOptions = {}
+      this.jshintOptions = {};
 
     switch (property) {
       case 'environments': this._setJshintEnvironmentOptions(value); break;
@@ -497,11 +496,11 @@ var JshintGenerator = yeoman.generators.Base.extend({
 
       case 'maxparams': case 'maxdepth': case 'maxstatements':
       case 'maxcomplexity': case 'maxlen':
-        this._setJshintMaxOrFalseValue(property, value)
+        this._setJshintMaxOrFalseValue(property, value);
       break;
 
       // all other properties can be set directly
-      default: this.jshintOptions[property] = value.toString()
+      default: this.jshintOptions[property] = value.toString();
     }
   },
 
@@ -524,20 +523,20 @@ var JshintGenerator = yeoman.generators.Base.extend({
       worker: false,
       wsh: false,
       yui: false
-    }
+    };
 
     // toggle any environments the user chose
     for (var index in environments) {
       if (environments.hasOwnProperty(environmentName)) {
-        var name = environments[index]
+        var name = environments[index];
 
-          allEnvironments[name] = true
+          allEnvironments[name] = true;
       }
     }
 
     for (var environmentName in allEnvironments) {
       if (allEnvironments.hasOwnProperty(environmentName)) {
-        this.jshintOptions[environmentName] = allEnvironments[environmentName]
+        this.jshintOptions[environmentName] = allEnvironments[environmentName];
       }
     }
   },
@@ -548,22 +547,22 @@ var JshintGenerator = yeoman.generators.Base.extend({
     //
     // Also: the possible options for 'quotmark' are
     // true/false/'single'/'double'. Add quotes around the strings
-    this.jshintOptions.quotmark = value.split(';', 1)[0]
+    this.jshintOptions.quotmark = value.split(';', 1)[0];
 
     switch (this.jshintOptions.quotmark) {
       case 'single': case 'double':
-        this.jshintOptions.quotmark = '"' + this.jshintOptions.quotmark + '"'
+        this.jshintOptions.quotmark = '"' + this.jshintOptions.quotmark + '"';
     }
   },
 
   _setJshintMaxOrFalseValue: function(property, value) {
-    var max = parseInt(value)
+    var max = parseInt(value);
 
     // assume false if the max value isn't an integer
     if (isNaN(max))
-      this.jshintOptions[property] = false
+      this.jshintOptions[property] = false;
     else
-      this.jshintOptions[property] = max
+      this.jshintOptions[property] = max;
   }
 });
 
